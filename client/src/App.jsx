@@ -332,7 +332,7 @@ export default function App() {
                 {EXAMS.map(ex => <option key={ex.id} value={ex.id} className="bg-slate-900 text-slate-100 font-medium">{ex.name} ({ex.desc})</option>)}
               </select>
             </div>
-            <button onClick={handleResetData} title="Clear all local data" className="p-2 bg-slate-900 hover:bg-rose-950/40 hover:text-rose-400 border border-slate-800 rounded-xl transition-all">
+            <button aria-label="Clear all data" onClick={handleResetData} title="Clear all local data" className="p-2 bg-slate-900 hover:bg-rose-950/40 hover:text-rose-400 border border-slate-800 rounded-xl transition-all">
               <Trash2 className="w-4 h-4" />
             </button>
           </div>
@@ -366,7 +366,7 @@ export default function App() {
           <div className="p-4 rounded-xl bg-rose-950/40 border border-rose-900/60 text-rose-300 text-xs flex items-center gap-3 animate-fade-in">
             <AlertTriangle className="w-4 h-4 text-rose-400 shrink-0" />
             <div className="flex-1 font-medium">{errorMsg}</div>
-            <button onClick={() => setErrorMsg('')} className="hover:text-white font-bold px-1 text-sm">×</button>
+            <button aria-label="Dismiss error" onClick={() => setErrorMsg('')} className="hover:text-white font-bold px-1 text-sm">×</button>
           </div>
         )}
 
@@ -402,7 +402,7 @@ export default function App() {
                   </p>
                 </div>
 
-                <button type="submit" disabled={isLoading || !journalText.trim()} className="py-3.5 px-6 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-950/30 disabled:opacity-40 disabled:pointer-events-none active:scale-[0.98]">
+                <button aria-label="Analyze and detect mood" type="submit" disabled={isLoading || !journalText.trim()} className="py-3.5 px-6 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold rounded-2xl transition-all flex items-center justify-center gap-2.5 shadow-lg shadow-indigo-950/30 disabled:opacity-40 disabled:pointer-events-none active:scale-[0.98]">
                   {isLoading ? (
                     <><RefreshCw className="w-4 h-4 animate-spin" /> Reading your mind...</>
                   ) : (
@@ -540,7 +540,7 @@ export default function App() {
                   </div>
                 </div>
                 {chatHistory.length > 0 && (
-                  <button onClick={() => { if (window.confirm('Reset chat?')) { setChatHistory([]); localStorage.removeItem('wellness_chat_history'); } }} className="text-[10px] text-slate-500 hover:text-rose-400 font-semibold uppercase">Clear</button>
+                  <button aria-label="Clear chat" onClick={() => { if (window.confirm('Reset chat?')) { setChatHistory([]); localStorage.removeItem('wellness_chat_history'); } }} className="text-[10px] text-slate-500 hover:text-rose-400 font-semibold uppercase">Clear</button>
                 )}
               </div>
 
@@ -584,7 +584,7 @@ export default function App() {
 
               <form onSubmit={handleSendMessage} className="flex gap-2 border-t border-slate-800 pt-3">
                 <input type="text" value={chatMessage} onChange={(e) => setChatMessage(e.target.value)} placeholder={chatHistory.length === 0 ? "Write a journal first..." : "Talk to your wellness guide..."} disabled={chatHistory.length === 0 || isChatLoading} className="flex-1 bg-slate-900 border border-slate-800 focus:border-indigo-500 focus:outline-none rounded-xl px-4 py-2.5 text-xs text-slate-200 placeholder:text-slate-600 disabled:opacity-40 transition-all" />
-                <button type="submit" disabled={!chatMessage.trim() || isChatLoading || chatHistory.length === 0} className="p-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl disabled:opacity-40 transition-all active:scale-95"><Send className="w-4 h-4" /></button>
+                <button aria-label="Send a message to your wellness guide" type="submit" disabled={!chatMessage.trim() || isChatLoading || chatHistory.length === 0} className="p-2.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl disabled:opacity-40 transition-all active:scale-95"><Send className="w-4 h-4" /></button>
               </form>
             </section>
           </div>
