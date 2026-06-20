@@ -1,0 +1,14 @@
+{
+  "name": "mental-wellness-tracker",
+  "version": "1.0.0",
+  "description": "Mental Wellness Tracker for Indian Competitive Exam Students",
+  "main": "server/server.js",
+  "scripts": {
+    "server": "npm start --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
