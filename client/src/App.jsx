@@ -143,7 +143,7 @@ export default function App() {
   const handleMoodSubmit = async (e) => {
     e.preventDefault();
     if (!journalText.trim()) {
-      setErrorMsg('Please write a short journal entry first to let Gemini analyze your mental state.');
+      setErrorMsg('Please write a short journal entry first to let Groq AI analyze your mental state.');
       return;
     }
 
@@ -587,7 +587,7 @@ export default function App() {
                   {/* Hints */}
                   <p className="text-[11px] text-indigo-400/80 mt-1.5 flex items-center gap-1.5 font-medium">
                     <Sparkles className="w-3 h-3 text-indigo-400 animate-spin" />
-                    Gemini AI will analyze your journal to find anxiety levels, key stress triggers, and custom coping strategies.
+                    Groq AI will analyze your journal to find anxiety levels, key stress triggers, and custom coping strategies.
                   </p>
                 </div>
 
@@ -604,7 +604,7 @@ export default function App() {
                   ) : (
                     <>
                       <Brain className="w-4.5 h-4.5" />
-                      Log Mood & Analyze with Gemini
+                      Log Mood & Analyze with Groq AI
                     </>
                   )}
                 </button>
@@ -616,7 +616,7 @@ export default function App() {
               <section className="glass-card rounded-3xl p-6 border-indigo-500/20 shadow-2xl animate-fade-in">
                 <div className="flex items-center gap-2 mb-4">
                   <Award className="w-5.5 h-5.5 text-indigo-400" />
-                  <h3 className="text-lg font-bold text-slate-100 font-display">Gemini Stress & Coping Insights</h3>
+                  <h3 className="text-lg font-bold text-slate-100 font-display">Groq AI Stress & Coping Insights</h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -669,7 +669,7 @@ export default function App() {
                 <Brain className="w-10 h-10 mx-auto mb-3 opacity-30" />
                 <h4 className="text-sm font-semibold">Ready to Analyze Triggers</h4>
                 <p className="text-xs text-slate-655 mt-1 leading-relaxed max-w-sm mx-auto">
-                  Submit today's journal entry to let Gemini map out stress factors, sleep issues, or competitive preparation triggers.
+                  Submit today's journal entry to let Groq AI map out stress factors, sleep issues, or competitive preparation triggers.
                 </p>
               </div>
             )}
@@ -909,7 +909,7 @@ export default function App() {
           Sankalp AI Student Mental Wellness Tracker
         </p>
         <p className="text-slate-600 mt-1">
-          Powered by Gemini 1.5 Flash. Encouraging mental health for India's competitive exam aspirants.
+          Powered by Groq Llama 3.3. Encouraging mental health for India's competitive exam aspirants.
         </p>
       </footer>
 
